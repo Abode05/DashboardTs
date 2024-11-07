@@ -4,7 +4,7 @@ import { Context } from "../App"
 
 const Navbar = () => {
   const user = JSON.parse(localStorage.getItem('User') || 'null')
-    const [result, setResult] = useState<string>('')
+    const [, setResult] = useState<string>('')
 
   const { SetSearchFilter } = useContext(Context)
 

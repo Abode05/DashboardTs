@@ -70,7 +70,7 @@ const ProductCard = () => {
             Authorization: `Bearer ${token}`,
           },
         })
-        .then((res) => {
+        .then(() => {
             setProducts((prevProducts) =>
             prevProducts.filter((product) => product.id !== productId)
           )

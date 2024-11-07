@@ -5,6 +5,7 @@ import { Link, useNavigate } from "react-router-dom"
 import { toast, ToastContainer } from "react-toastify"
 import ConfirmModal from "./ConfirmModal"
 import {Context} from '../App'
+import "react-toastify/dist/ReactToastify.css";
 
 interface productObj {
   id:number
@@ -75,9 +76,7 @@ const ProductCard = () => {
             prevProducts.filter((product) => product.id !== productId)
           )
           toast.success('Product deleted successfully')
-          setTimeout(() => {
-            navigate('/')
-          }, 1500)
+         
         })
         .catch((error) => {
           console.log(error)

@@ -2,6 +2,8 @@ import { Outlet, useNavigate } from 'react-router-dom'
 import SideBar from './components/SideBar'
 import Navbar from './components/Navbar'
 import { createContext, useEffect, useState } from 'react'
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
 
 const linkSideBar = [
   { title: 'product', link: '/', icon: 'fa-solid fa-border-all' },
@@ -39,6 +41,7 @@ function App() {
           <Outlet />
         </div>
       </div>
+      <ToastContainer/>
     </Context.Provider>
   )
 }

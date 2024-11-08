@@ -120,7 +120,7 @@ const Form = ({ title, subtitle, inputs, btn, api, className }: DataForm) => {
                 input.type === 'email' ? 'w-[calc(100%)]' : ''
               } ${input.type === 'file' ? 'w-[calc(100%)] ' : ''} ${
                 input.type === 'password' && btn == 'Signin'
-                  ? 'w-[calc(50%)] inline-block '
+                  ? 'md:w-[calc(50%)] inline-block '
                   : ''
               }  `}
             >

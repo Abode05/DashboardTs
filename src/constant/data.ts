@@ -71,4 +71,9 @@ const inputCreate = [
     name: 'image',
   },
 ]
-export { inputs, inputsLogin, inputCreate }
+const linkSideBar = [
+  { title: 'product', link: '/', icon: 'fa-solid fa-border-all' },
+  { title: 'Favorites', link: 'favorate', icon: 'fa-regular fa-heart' },
+  { title: 'Order List', link: 'orderlist', icon: 'fa-solid fa-list-check' },
+]
+export { inputs, inputsLogin, inputCreate, linkSideBar }

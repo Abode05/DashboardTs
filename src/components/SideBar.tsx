@@ -27,7 +27,7 @@ const SideBar = ({ links }: SidebarProps) => {
      setIsModalOpen(false)
    }
   return (
-    <div className="p-6 w-64 h-screen  flex flex-col z-50 shadow-sm  dark:bg-dark-2 dark:text-gray-200 ">
+    <div className="hidden    p-6 w-64 h-screen  md:flex flex-col z-50 shadow-sm  dark:bg-dark-2 dark:text-gray-200 ">
       <h1 className="text-3xl font-bold mb-8 ">
         <span className="text-blue-1 relative  "> Dash</span>Stack
       </h1>

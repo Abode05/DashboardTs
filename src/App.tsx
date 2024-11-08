@@ -4,12 +4,9 @@ import Navbar from './components/Navbar'
 import { createContext, useEffect, useState } from 'react'
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
+import { linkSideBar } from './constant/data';
 
-const linkSideBar = [
-  { title: 'product', link: '/', icon: 'fa-solid fa-border-all' },
-  { title: 'Favorites', link: 'favorate', icon: 'fa-regular fa-heart' },
-  { title: 'Order List', link: 'orderlist', icon: 'fa-solid fa-list-check' },
-]
+
 
 interface ContextProps {
   SearchFilter: string

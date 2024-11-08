@@ -102,7 +102,7 @@ const ProductCard = () => {
             <img
               src={product.image_url}
               alt=""
-              className="w-48 h-48 text-center  "
+              className="w-48 h-48 text-center m-auto   "
             />
             <h1 className="text-2xl font-bold dark:text-gray-200">
               {product.name}

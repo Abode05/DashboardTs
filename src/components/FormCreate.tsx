@@ -125,12 +125,12 @@ const FormCreate = ({ inputs, title, btn }: DataForm) => {
   }
 
   return (
-    <div className="p-6">
+    <div className="p-6 min-h-screen ">
       <h1 className="text-3xl font-semibold mb-4 dark:text-gray-200 text-dark-1 mt-16">
         {title}
       </h1>
 
-      <form className="flex gap-8 mt-8" onSubmit={handleSubmit}>
+      <form className="flex  flex-col md:flex-row gap-8 mt-8" onSubmit={handleSubmit}>
         {/* Left side: Text inputs */}
         <div className="flex-1">
           {inputs.map((input, index) => (

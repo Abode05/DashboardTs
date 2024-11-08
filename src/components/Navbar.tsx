@@ -1,10 +1,14 @@
 import { ChangeEvent, useContext, useEffect, useState } from "react"
 import { FaMoon } from "react-icons/fa"
 import { Context } from "../App"
+import { NavLink } from "react-router-dom"
+import { FiAlignJustify } from "react-icons/fi"
+import { linkSideBar } from "../constant/data"
 
 const Navbar = () => {
   const user = JSON.parse(localStorage.getItem('User') || 'null')
     const [, setResult] = useState<string>('')
+  const [isOpen, setIsOpen] = useState(false)
 
   const { SetSearchFilter } = useContext(Context)
 
@@ -30,14 +34,15 @@ const toggleTheme = ():void => {
 
   setResult(searchValue)
   SetSearchFilter(searchValue.toLowerCase())
-}
+  }
   return (
+    <>
     <div
-      className={`p-4 w-full flex fixed justify-between   bg-white
-      shadow dark:bg-dark-2 dark:text-gray-200   z-10  
+      className={`p-4 w-full flex items-center fixed justify-between   bg-white
+      shadow dark:bg-dark-2 dark:text-gray-200   z-10    
      `}
     >
-      <div className="relative hidden md:block ">
+      <div className="relative hidden md:block  ">
         <img
           src="/assets/icons/search.svg"
           alt=""
@@ -69,7 +74,60 @@ const toggleTheme = ():void => {
           </div>
         </div>
       )}
-    </div>
+        <div className="block md:hidden cursor-pointer" onClick={()=>setIsOpen(!isOpen)}>
+          <FiAlignJustify  className="text-2xl"/>
+
+        </div>
+        
+      </div>
+      {isOpen && (
+        <div className="absolute  md:hidden
+         z-10 h-screen top-0 left-0 right-0 dark:text-white bg-white dark:bg-dark-2
+          shadow-md p-8">
+
+          <div className="relative ">
+            <img
+              src="/assets/icons/search.svg"
+              alt=""
+              className="absolute top-2 left-2"
+            />
+            <input
+              type="text"
+              placeholder="Search a product ..."
+              className="bg-secondary rounded-full w-full h-8 pl-8"
+              name=""
+              onChange={handleSearch}
+            />
+            <div className="flex flex-col justify-between ">
+              <ul className="flex flex-col gap-4 relative justify-center mt-8">
+                {linkSideBar.map((item, index) => (
+                  <li
+                    key={index}
+                    className="flex flex-col justify-center text-lg hover:bg-slate-700 p-2 rounded-md "
+                    onClick={()=>setIsOpen(false)}
+                  >
+                    <NavLink to={item.link}>
+                      
+                        <div className="flex relative justify-center">
+                        
+                          <div className="flex gap-4 justify-center items-center w-full">
+                            <p className="text-xl    relative -top-1">
+                              {item.title}
+                            </p>
+                          </div>
+                        </div>
+                      
+                    </NavLink>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      )}
+
+      
+    </>
   )
 }
 
